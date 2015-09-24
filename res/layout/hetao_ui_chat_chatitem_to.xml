@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hetao_ui_chat_bgcolor"
+    android:orientation="horizontal"
+    android:padding="@dimen/padding10" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/hetao_ui_chat_chatitem_to_selector"
+        android:padding="@dimen/hetao_chat_text_size"
+        android:text="TextView"
+        android:textSize="@dimen/hetao_chat_text_size" />
+     <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/hetao_ui_chat_default_avatar" />
+
+</LinearLayout>

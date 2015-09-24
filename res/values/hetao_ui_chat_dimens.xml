@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="hetao_chat_text_size">18dp</dimen>
+    <dimen name="hetao_chat_text_padding">10dp</dimen>
+    <dimen name="padding10">10dp</dimen>
+</resources>
