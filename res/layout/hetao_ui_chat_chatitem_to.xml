@@ -1,24 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/hetao_ui_chat_bgcolor"
-    android:orientation="horizontal"
-    android:padding="@dimen/padding10" >
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="13dp" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/timestamp"
+        style="@style/hetao_ui_chat_text_date_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/hetao_ui_chat_chatitem_to_selector"
-        android:padding="@dimen/hetao_chat_text_size"
-        android:text="TextView"
-        android:textSize="@dimen/hetao_chat_text_size" />
-     <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/hetao_ui_chat_default_avatar" />
+        android:layout_marginTop="@dimen/hetao_ui_chat_margin" >
+
+        <ImageView
+            android:id="@+id/iv_userhead"
+            android:layout_width="@dimen/hetao_ui_chat_size_avatar"
+            android:layout_height="@dimen/hetao_ui_chat_size_avatar"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="@dimen/hetao_ui_chat_margin"
+            android:background="@drawable/hetao_ui_chat_default_avatar"
+            android:scaleType="fitXY" />
+       <RelativeLayout
+            android:id="@+id/tv_chatcontent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/hetao_ui_chat_margin"
+            android:layout_toLeftOf="@id/iv_userhead"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/hetao_ui_chat_chatitem_to_selector"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="left|center"
+            android:maxWidth="225.0dip"
+            android:minHeight="50dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:clickable="true"
+                android:focusable="true"
+                android:text=""
+                android:gravity="left|center"
+                android:lineSpacingExtra="2dp"
+                android:textColor="#ff000000"
+                android:textSize="15sp" />
+        </RelativeLayout>
+       
+        <ImageView
+            android:id="@+id/msg_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_chatcontent"
+            android:clickable="true"
+            android:src="@drawable/hetao_ui_chat_msg_state_failed_resend"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_ack"
+            style="@style/hetao_ui_chat_text_name_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_chatcontent"
+            android:text="@string/hetao_ui_chat_text_ack_msg"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_delivered"
+            style="@style/hetao_ui_chat_text_name_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_chatcontent"
+            android:text="@string/hetao_ui_chat_text_delivered_msg"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <ProgressBar
+            android:id="@+id/pb_sending"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_chatcontent"
+            android:visibility="visible" />
+    </RelativeLayout>
 
 </LinearLayout>

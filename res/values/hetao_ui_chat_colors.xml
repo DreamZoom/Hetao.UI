@@ -2,5 +2,6 @@
 <resources>
    
     <color name="hetao_ui_chat_bgcolor">#ddd</color>
+    <color name="hetao_ui_chat_text_gray_color">#c0c0c0</color>
 
 </resources>
