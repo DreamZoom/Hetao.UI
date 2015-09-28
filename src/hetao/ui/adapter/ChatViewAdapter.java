@@ -1,10 +1,12 @@
 package hetao.ui.adapter;
 
+import java.io.File;
 import java.util.Date;
 
 import hetao.ui.controls.ChatView;
 
 import com.androidquery.AQuery;
+import com.androidquery.callback.BitmapAjaxCallback;
 import com.easemob.EMCallBack;
 import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMConversation;
@@ -13,11 +15,13 @@ import com.easemob.chat.ImageMessageBody;
 import com.easemob.chat.TextMessageBody;
 import com.easemob.chat.EMMessage.ChatType;
 import com.easemob.util.DateUtils;
+import com.easemob.util.ImageUtils;
 
 import com.hetao.ui.R;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Handler;
 import android.text.Spannable;
 import android.view.View;
@@ -74,6 +78,9 @@ public class ChatViewAdapter extends BaseAdapter {
 		if (message == null)
 			return null;
 
+//		if(convertView!=null && message.status==EMMessage.Status.SUCCESS){
+//			return convertView;
+//		}
 		// /消息类型
 		ChatType chatType = message.getChatType();
 
@@ -177,7 +184,8 @@ public class ChatViewAdapter extends BaseAdapter {
 		case IMAGE:
 			ImageMessageBody imgBody=(ImageMessageBody) message.getBody();
 			contentView =new ImageView(this.context);
-			new AQuery(contentView).webImage(imgBody.getRemoteUrl());
+			
+			new AQuery(contentView).image(imgBody.getLocalUrl(), true,true,200,0);
 			break;
 		default:
 			break;		

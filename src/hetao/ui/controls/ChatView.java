@@ -19,6 +19,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -38,6 +39,8 @@ public class ChatView extends ListView {
 	int chatType=0;
 	
 	public void InitChat(String username,int chatType){
+		
+		
         //去掉分割线
 		this.chatType = chatType;
 		this.setDivider(null);
@@ -69,7 +72,9 @@ public class ChatView extends ListView {
 	}
 	
 	public void SendImageMessage(File content){
-		EMMessage message = EMMessage.createSendMessage(EMMessage.Type.TXT);
+		
+		
+		EMMessage message = EMMessage.createSendMessage(EMMessage.Type.IMAGE);
 		//如果是群聊，设置chattype,默认是单聊
 		if(chatType==1){
 			message.setChatType(ChatType.GroupChat);
